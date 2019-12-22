@@ -1,0 +1,41 @@
+{% extends 'todo/base.html' %}
+
+{% block title %} Add Todo  {% endblock %}
+
+{% block content %}
+
+    <div class="form-box">
+
+      <form class="" action="." method="POST">
+        {{todoForm.media}}
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="Task Name">Task Name</label> <br>
+         {{ todoForm.name }}
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label> <br>
+          {{ todoForm.description }}
+          <!-- <textarea name="description" class="form-control" rows="3" cols="80"></textarea> -->
+        </div>
+        <div class="form-group">
+          <label for="task_type">Select Type</label>
+          {{ todoForm.task_type }}
+        </div>
+        <div class="form-group">
+          <label for="task_type">Select Start Date</label>
+          {{ todoForm.start_date }}
+        </div>
+        <div class="form-group">
+          <label for="task_type">Select End Date</label>
+          {{ todoForm.end_date }}
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" name="button">Submit</button>
+        </div>
+      </form>
+
+    </div>
+
+
+{% endblock %}
